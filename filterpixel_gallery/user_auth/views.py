@@ -5,6 +5,10 @@ from django.contrib.auth.decorators import login_required
 from user_auth.forms import CreateUserForm
 # Create your views here.
 
+def signup_redirect(request):
+    messages.error('You already have an account with the same Email. Login using that ID.')
+    return redirect('login')
+
 def index(request):
     return render(request, 'index.html')
 

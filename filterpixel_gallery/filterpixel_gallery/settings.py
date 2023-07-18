@@ -136,10 +136,9 @@ STATICFILES_DIRs = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
 SITE_ID = 1
 
-# SOCIALACCOUNT_LOGIN_ON_GET = True 
+SOCIALACCOUNT_LOGIN_ON_GET = True 
 
 LOGOUT_REDIRECT_URL = '/'
 
@@ -150,6 +149,24 @@ AUTHENTICATION_BACKENDS = [
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
+
+GOOGLE_DRIVE_API_KEY = 'AIzaSyC9ZSbJEK7JvtwU1b5nUK6HpKFY9yRSdxw'
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google':{
+        'SCOPE':[
+            'profile',
+            'email'
+        ],
+        'AUTH_PARAMS':{
+            'access_type':'online',
+        },
+        'APP':{
+            "client_id":"444687946771-2f3fdc76a8or63tgbcoop8k0dgcrs2g3.apps.googleusercontent.com",
+            "secret":"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",
+        }
+    }
+}
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
