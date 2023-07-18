@@ -1,0 +1,91 @@
+body {
+  text-align: center;
+}
+
+h1 {
+  font-family: Montserrat, sans-serif;
+  font-weight: 600;
+}
+
+.navbar {
+  background: rgba(255,255,255,0);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+#div1 {
+  margin-top: 165px;
+}
+
+#icon {
+  font-size: 40px;
+}
+
+#chooseus {
+  font-family: Montserrat, sans-serif;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.hfont {
+  font-family: Cousine, monospace;
+  text-align: left;
+}
+
+.pfont {
+  text-align: left;
+}
+
+#div3 {
+  margin-top: 100px;
+}
+
+#div2 {
+  margin-top: 109px;
+}
+
+.len {
+}
+
+.len {
+  margin-top: 3px;
+}
+
+.glass {
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+#head1 {
+  padding-left: 3vh;
+  font-family: Cousine, monospace;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.link1 {
+  vertical-align: middle;
+  font-size: 30px;
+}
+
