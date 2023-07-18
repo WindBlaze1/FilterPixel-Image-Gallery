@@ -11,30 +11,30 @@
                             <form action="{% url 'gallery' %}" method="POST">
                                 {% csrf_token %}
                                 <input type="hidden" name="button" value="drive">
-                                <button class="btn btn-danger active" type="button">&nbsp; From S3&nbsp;</button>
+                                <button class="btn btn-danger {{drive_active}}" type="submit">&nbsp; From Drive&nbsp;</button>
                             </form>
                             <form action="{% url 'gallery' %}" method="POST">
                                 {% csrf_token %}
                                 <input type="hidden" name="button" value="s3">
-                                <button class="btn btn-danger" type="button">&nbsp;From Drive&nbsp;</button>
+                                <button class="btn btn-danger {{s3_active}}" type="submit">&nbsp;From S3&nbsp;</button>
                             </form>
                         </div>
                     </div>
                 </div><!-- Start: Photos -->
                 <div class="row gx-2 gy-2 row-cols-1 row-cols-md-2 row-cols-xl-3 photos" data-bss-baguettebox="">
                     {% for image in page_obj %}
-                        <div class="col item"><a href="{{image}}"><img class="img-fluid" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"></a></div>
+                        <div class="col item"><a href="{{image}}" target="_blank"><img class="img-fluid" src="{{image}}"></a></div>
                     {% endfor %}
                 </div><!-- End: Photos -->
             </div>
         </section><!-- End: Lightbox Gallery -->
     </div>
     <!-- Pagination -->
-    <div class="pagination">
+    <div class="pagination row" style="text-align:center; font-face:bold; font-family: Cousine, monospace;">
         <span class="step-links">
         {% if page_obj.has_previous %}
-            <a href="?page=1">&laquo; first</a>
-            <a href="?page={{ page_obj.previous_page_number }}"> &lt;Prev</a>
+            <a href="?page=1" class="link-dark">&laquo; First</a>
+            <a href="?page={{ page_obj.previous_page_number }}" class="link-dark"> Prev</a>
         {% endif %}
     
         <span class="current-page">
@@ -42,8 +42,8 @@
         </span>
     
         {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}">Next&rt;</a>
-            <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+            <a href="?page={{ page_obj.next_page_number }}" class="link-dark">Next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}" class="link-dark">Last &raquo;</a>
         {% endif %}
         </span>
     </div>
