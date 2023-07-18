@@ -150,8 +150,6 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-GOOGLE_DRIVE_API_KEY = 'AIzaSyC9ZSbJEK7JvtwU1b5nUK6HpKFY9yRSdxw'
-
 SOCIALACCOUNT_PROVIDERS = {
     'google':{
         'SCOPE':[
