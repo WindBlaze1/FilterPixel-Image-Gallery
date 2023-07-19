@@ -6,18 +6,27 @@
         <section class="photo-gallery py-4 py-xl-5">
             <div class="container">
                 <div class="row mb-5">
-                    <div class="col">
+                    {% comment %} <div class="col">
                         <div class="btn-group" role="group" id="btns">
                             <form action="{% url 'gallery' %}" method="POST">
                                 {% csrf_token %}
                                 <input type="hidden" name="button" value="drive">
-                                <button class="btn btn-danger {{drive_active}}" type="submit">&nbsp; From Drive&nbsp;</button>
+                                <button class="btn btn-danger" type="submit">&nbsp; From Drive&nbsp;</button>
                             </form>
                             <form action="{% url 'gallery' %}" method="POST">
                                 {% csrf_token %}
                                 <input type="hidden" name="button" value="s3">
-                                <button class="btn btn-danger {{s3_active}}" type="submit">&nbsp;From S3&nbsp;</button>
-                            </form>
+                                <button class="btn btn-danger" type="submit">&nbsp;From S3&nbsp;</button>
+                            </form><br>
+                            <p>"{{which}} Images"</p>
+                        </div>
+                    </div> {% endcomment %}
+
+
+                    <div class="col">
+                        <div class="btn-group" role="group" id="btns">
+                            <button class="btn btn-danger {{drive}}" type="button" onclick="window.location.href='{% url 'gallery_drive' %}'">From Drive</button>
+                            <button class="btn btn-danger {{s3}}" type="button" onclick="window.location.href='{% url 'gallery_s3' %}'">&nbsp; From S3&nbsp;</button>
                         </div>
                     </div>
                 </div><!-- Start: Photos -->
